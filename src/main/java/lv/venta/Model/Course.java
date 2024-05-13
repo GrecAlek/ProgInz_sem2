@@ -1,4 +1,4 @@
-package Model;
+package lv.venta.Model;
 
 
 import java.util.Collection;
@@ -29,7 +29,7 @@ import lombok.ToString;
 @ToString
 @Table(name = "CourseTable")
 @Entity
-public class Course<Grade> {
+public class Course {
 	@Id
 	@Column(name = "Idc")
 	@GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,4 +1,4 @@
-package Model;
+package lv.venta.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

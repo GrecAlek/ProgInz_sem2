@@ -1,6 +1,4 @@
-package Model;
-import Model.Course;
-import Model.Professor;
+package lv.venta.Model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +14,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lv.venta.Model.Course;
+import lv.venta.Model.Professor;
 
 @Getter
 @Setter
