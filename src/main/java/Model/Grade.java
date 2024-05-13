@@ -40,6 +40,17 @@ public class Grade {
 	@JoinColumn(name="Idc")
 	private Course course;
 	
+	@ManyToOne
+	@JoinColumn(name="Ids")
+	private Student student;
+	
+	public Grade(int grValue, Course course, Student student) {
+		setCourse(course);
+		setGrvalue(grValue);
+		setStudent(student);
+		
+	}
+	
 	
 
 }
