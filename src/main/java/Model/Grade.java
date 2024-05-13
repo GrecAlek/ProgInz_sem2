@@ -1,3 +1,4 @@
+package Model;
 import Model.Course;
 import Model.Professor;
 import jakarta.persistence.Column;
