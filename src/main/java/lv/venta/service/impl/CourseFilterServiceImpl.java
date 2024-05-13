@@ -25,7 +25,7 @@ public class CourseFilterServiceImpl implements ICourseFilterService{
 	public ArrayList<Course> selectCoursesByCreditPoints(int creditPoints) throws Exception {
 		if(creditPoints<1 || creditPoints>20)throw new Exception("Problem with input");
 		
-		ArrayList<Course> result =courseRepo.findByCreditPoints(creditPoints);
+		ArrayList<Course> result =courseRepo.findByCreditpoints(creditPoints);
 		
 		if(result.isEmpty()) throw new Exception("Empty");
 		
