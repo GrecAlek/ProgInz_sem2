@@ -40,14 +40,14 @@ public class CourseFilterController {
 		
 		
 
-		@GetMapping("/filter/student/{id}")//localhost:8080/course/filter/creditpoints/2
+		@GetMapping("/filter/student/{id}")//localhost:8080/course/filter/student/2
 		
-		public String getCourseFilterByStudentId (@PathVariable("id")int param, Model model) {
+		public String getCourseFilterByStudentId (@PathVariable("id")int id, Model model) {
 			
 			 try {
-				ArrayList<Course> selectedCourses =  courseFilterService.selectCoursesByCreditPoints(param);
+				ArrayList<Course> selectedCourses =  courseFilterService.selectCoursesByCreditPoints(id);
 				model.addAttribute("mydata",selectedCourses);
-				model.addAttribute("msg", "courses filtered by creditpoints!");
+				model.addAttribute("msg", "courses filtered by Students!");
 				return "course-show-all-page";
 			} catch (Exception e) {
 				model.addAttribute("mydata",e.getMessage());
@@ -57,7 +57,7 @@ public class CourseFilterController {
 			
 		}
 		
-@GetMapping("/filter/proffesor/{id}")//localhost:8080/course/filter/creditpoints/2
+@GetMapping("/filter/professor/{id}")//localhost:8080/course/filter/professor/2
 		
 		public String getCourseFilterByProfessorId(@PathVariable("id")int id, Model model) {
 			

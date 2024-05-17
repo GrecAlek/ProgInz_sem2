@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<p th:text="${msg}"> </p>
+
+	<table border="1">
+		<tr>
+			<td> ID </td>
+			<td> Title </td>
+			<td> CP</td>
+			<td> Prof Name </td>
+			<td> Prof Surname</td>
+
+		</tr>
+
+		<tr>
+			<td th:text="${mydata.getIdc()}"> </td>
+			<td th:text="${mydata.getTitle()}"> </td>
+			<td th:text="${mydata.getCreditpoints()}"> </td>
+			<td th:text="${mydata.getProfessor().getName()}"> </td>
+			<td th:text="${mydata.getProfessor().getSurname()}"> </td>
+		</tr>
+
+
+
+
+	</table>
+</body>
+
+
+</html>

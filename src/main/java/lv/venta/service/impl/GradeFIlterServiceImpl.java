@@ -34,7 +34,7 @@ public class GradeFIlterServiceImpl implements IGradeFilterService{
 	}
 
 	@Override
-	public ArrayList<Grade> selectGradesAVGInCourseID(int id) throws Exception {
+	public ArrayList<Grade> selectGradesbyStudentId(int id) throws Exception {
 		if(id<1)throw new Exception("ID should be positive");
 		
 		if(!studRepo.existsById(id)) throw new Exception("Student with this id doesnt exists!");

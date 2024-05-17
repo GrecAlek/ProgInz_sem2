@@ -58,7 +58,7 @@ public class ProginzSeminars2Application {
 				gradeRepo.save(new Grade(4,c2,s2));
 				gradeRepo.save(new Grade(6,c3,s2));
 				
-				gradeRepo.save(new Grade(4,c1,s3));
+				gradeRepo.save(new Grade(1,c1,s3));
 				gradeRepo.save(new Grade(7,c2,s3));
 				gradeRepo.save(new Grade(10,c3,s3));
 				

@@ -8,10 +8,10 @@ public interface IGradeFilterService {
 	
 	public abstract ArrayList<Grade> selectFailedGrades()throws Exception;
 	
-	public abstract ArrayList<Grade>selectGradesAVGInCourseID(int id)throws Exception;
+	public abstract ArrayList<Grade>selectGradesbyStudentId(int id)throws Exception;
 	
 	public abstract float calculateAVGGradeInCourseId(int id)throws Exception;
-	
+
 	
 
 }
