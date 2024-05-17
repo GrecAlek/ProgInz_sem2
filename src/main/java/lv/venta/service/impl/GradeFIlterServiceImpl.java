@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lv.venta.Model.Grade;
+import lv.venta.repo.ICourseRepo;
 import lv.venta.repo.IGradeRepo;
+import lv.venta.repo.IStudentRepo;
 import lv.venta.service.IGradeFilterService;
 
 
@@ -15,6 +17,12 @@ public class GradeFIlterServiceImpl implements IGradeFilterService{
 	
 	@Autowired
 	private IGradeRepo gradeRepo;
+	
+	@Autowired
+	private IStudentRepo studRepo;
+	
+	@Autowired
+	private ICourseRepo courseRepo;
 
 	@Override
 	public ArrayList<Grade> selectFailedGrades() throws Exception {
@@ -27,14 +35,30 @@ public class GradeFIlterServiceImpl implements IGradeFilterService{
 
 	@Override
 	public ArrayList<Grade> selectGradesAVGInCourseID(int id) throws Exception {
+		if(id<1)throw new Exception("ID should be positive");
 		
-		return null;
+		if(!studRepo.existsById(id)) throw new Exception("Student with this id doesnt exists!");
+		
+		
+		ArrayList<Grade> result=gradeRepo.findByStudentIds(id);
+		if(result.isEmpty())throw new Exception("Empty!");
+		
+		return result;
 	}
 
 	@Override
 	public float calculateAVGGradeInCourseId(int id) throws Exception {
+		if(id<1)throw new Exception("ID should be positive");
 		
-		return 0;
+		if(!courseRepo.existsById(id))throw new Exception("Course with this id doesnt exists!");
+		
+		float result = gradeRepo.calculateAVGGradeInCourseById(id);
+		
+	
+		if(result==0)throw new Exception("Empty!");
+		
+
+		return result;
 	}
 
 }
