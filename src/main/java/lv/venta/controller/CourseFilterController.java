@@ -62,7 +62,7 @@ public class CourseFilterController {
 		public String getCourseFilterByProfessorId(@PathVariable("id")int id, Model model) {
 			
 			 try {
-				Course selectedCourses =  courseFilterService.selectCourseByProfessorID(id);
+				Course selectedCourses =  courseFilterService.selectCoursesByProfessorID(id);
 				model.addAttribute("mydata",selectedCourses);
 				model.addAttribute("msg", "courses filtered by professor!");
 				return "course-show-one-page";

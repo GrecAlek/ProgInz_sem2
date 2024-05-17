@@ -1,11 +1,16 @@
 package lv.venta.Model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -43,13 +48,16 @@ public class Professor {
 	@Pattern(regexp = "[A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+", message = "Only letters and space are allowed")
 	private String surname;
 	
-	@NotNull
 	@Column(name="Degree")
+	@NotNull
 	private Degree degree;
 	
-	@OneToOne(mappedBy = "professor")
-	@ToString.Exclude
-	private Course course;
+	
+	@JoinTable(name="ProfessorCourseTable",joinColumns = @JoinColumn(name="Idp"),inverseJoinColumns = @JoinColumn(name="Idc"))
+	@ManyToMany
+	private Collection<Course>courses=new ArrayList<>();
+	
+
 	
 	
 	
@@ -57,5 +65,10 @@ public class Professor {
 		setName(name);
 		setSurname(surname);
 		setDegree(degree);
+	}
+	
+	public void addCourse(Course course) {
+		if(!courses.contains(course))
+			courses.add(course);
 	}
 }
