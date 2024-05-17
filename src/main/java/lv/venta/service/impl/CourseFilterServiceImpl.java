@@ -17,8 +17,10 @@ public class CourseFilterServiceImpl implements ICourseFilterService{
 	@Autowired
 	private ICourseRepo courseRepo;
 	
+	@Autowired
 	private IProfessorRepo profRepo;
 	
+	@Autowired
 	private IStudentRepo studentRepo;
 
 	@Override
@@ -54,7 +56,7 @@ public class CourseFilterServiceImpl implements ICourseFilterService{
 		
 		if(studentRepo.existsById(id))throw new Exception("Student with bthis ID doesnt exists!");
 		
-		ArrayList<Course> result = courseRepo.findByStudentIds(id);
+		ArrayList<Course> result = courseRepo.findByGradesStudentIds(id);
 		
 		if(result.isEmpty()) throw new Exception("Empty");
 		
