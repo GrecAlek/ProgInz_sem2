@@ -40,13 +40,8 @@ public class GradeFilterController {
 			return "error-page";
 		}
 		
-
-		
-		
 	}
 	
-
-
 		
 		
 	@GetMapping("/student/{id}")//localhost:8080/grade/filter/student/1

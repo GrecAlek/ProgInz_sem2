@@ -15,13 +15,13 @@ import lv.venta.service.ICourseFilterService;
 
 
 @Controller
-@RequestMapping("/course")
+@RequestMapping("/course/filter")
 public class CourseFilterController {
 	
 	@Autowired
 	private ICourseFilterService courseFilterService;
 
-		@GetMapping("/filter/creditpoints/{param}")//localhost:8080/course/filter/creditpoints/2
+		@GetMapping("/creditpoints/{param}")//localhost:8080/course/filter/creditpoints/2
 		
 		public String getCourseFilterByCreditPoints(@PathVariable("param")int param, Model model) {
 			
@@ -40,7 +40,7 @@ public class CourseFilterController {
 		
 		
 
-		@GetMapping("/filter/student/{id}")//localhost:8080/course/filter/student/2
+		@GetMapping("/student/{id}")//localhost:8080/course/filter/student/2
 		
 		public String getCourseFilterByStudentId (@PathVariable("id")int id, Model model) {
 			
@@ -57,7 +57,7 @@ public class CourseFilterController {
 			
 		}
 		
-@GetMapping("/filter/professor/{id}")//localhost:8080/course/filter/professor/2
+@GetMapping("/professor/{id}")//localhost:8080/course/filter/professor/2
 		
 		public String getCourseFilterByProfessorId(@PathVariable("id")int id, Model model) {
 			

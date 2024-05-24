@@ -28,26 +28,14 @@ import lombok.ToString;
 @ToString
 @Table(name = "ProfessorTable")
 @Entity
-public class Professor {
+public class Professor extends Person {
 	@Id
 	@Column(name = "Idp")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Setter(value = AccessLevel.NONE)
 	private int idp;
 
-	// TODO uzlabot regex gan vārdam, gan uzvārdam
-	@Column(name = "Name")
-	@NotNull
-	@Size(min = 3, max = 50)
-	@Pattern(regexp = "[A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+", message = "Only letters and space are allowed")
-	private String name;
 
-	@Column(name = "Surname")
-	@NotNull
-	@Size(min = 3, max = 50)
-	@Pattern(regexp = "[A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+", message = "Only letters and space are allowed")
-	private String surname;
-	
 	@Column(name="Degree")
 	@NotNull
 	private Degree degree;
@@ -59,11 +47,8 @@ public class Professor {
 	
 
 	
-	
-	
 	public Professor(String name, String surname, Degree degree) {
-		setName(name);
-		setSurname(surname);
+		super(name,surname);
 		setDegree(degree);
 	}
 	

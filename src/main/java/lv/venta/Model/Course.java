@@ -51,17 +51,12 @@ public class Course {
 	
 	
 	
-	
-	
 	@ManyToMany(mappedBy = "courses")
 	private Collection<Professor>professors=new ArrayList<>();
 	
 	@OneToMany(mappedBy = "course")
 	@ToString.Exclude
 	private Collection<Grade>grades;
-	
-	
-	
 	
 	
 	
