@@ -1,6 +1,8 @@
 package lv.venta.Model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -16,7 +18,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-@MappedSuperclass   //no sis klases nebus tabula
+@Inheritance(strategy = InheritanceType.JOINED)
 
 
 public class Person {

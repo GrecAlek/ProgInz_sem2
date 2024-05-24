@@ -40,7 +40,7 @@ public class GradeFIlterServiceImpl implements IGradeFilterService{
 		if(!studRepo.existsById(id)) throw new Exception("Student with this id doesnt exists!");
 		
 		
-		ArrayList<Grade> result=gradeRepo.findByStudentIds(id);
+		ArrayList<Grade> result=gradeRepo.findByStudentIdpe(id);
 		if(result.isEmpty())throw new Exception("Empty!");
 		
 		return result;

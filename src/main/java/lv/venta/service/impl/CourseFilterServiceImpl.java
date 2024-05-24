@@ -42,7 +42,7 @@ public class CourseFilterServiceImpl implements ICourseFilterService{
 		if(profRepo.existsById(id))throw new Exception("Professor with this ID doesnt exist");
 		
 		
-		Course result=courseRepo.findByProfessorsIdp(id);
+		Course result=courseRepo.findByProfessorsIdpe(id);
 		
 		if(result==null)throw new Exception("There is no course for this professor!");
 		
@@ -56,7 +56,7 @@ public class CourseFilterServiceImpl implements ICourseFilterService{
 		
 		if(studentRepo.existsById(id))throw new Exception("Student with bthis ID doesnt exists!");
 		
-		ArrayList<Course> result = courseRepo.findByGradesStudentIds(id);
+		ArrayList<Course> result = courseRepo.findByGradesStudentIdpe(id);
 		
 		if(result.isEmpty()) throw new Exception("Empty");
 		
