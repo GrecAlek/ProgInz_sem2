@@ -2,31 +2,33 @@
 	
 <body>
 	
-	<p th:text="${msg}"> </p>
+	
+	<p th:text="${msg}"></p>
 	
 	<table border="1">
+		
 		<tr>
-			<td> ID </td>
-			<td> Title </td>
-			<td> CP</td>
-			<td> Prof Name </td>
-			<td> Prof Surname</td>
+			<td> <b>Id</b></td>
+			<td><b>Title</b></td>
+			<td><b>CP</b></td>
+			<td><b>Professor name</b></td>
+			<td><b>Professor surname</b></td>
 			
 		</tr>
 		
+		
 		<tr th:each="tempC : ${mydata}">
-		<td th:text="${tempC.getIdc()}"> </td>
-		<td th:text="${tempC.getTitle()}"> </td>
-		<td th:text="${tempC.getCreditpoints()}"> </td>
-		<td th:text="${tempC.getProfessor().getName()}"> </td>
-		<td th:text="${tempC.getProfessor().getSurname()}"> </td>
+			<td th:text="${tempC.getIdc()}"></td>
+			<td th:text="${tempC.getTitle()}"></td>
+			<td th:text="${tempC.getCreditpoints()}"></td>
+			<td th:text="${tempC.getProfessor().getName()}"></td>
+			<td th:text="${tempC.getProfessor().getSurname()}"></td>
 		</tr>
 		
-		
-	
-	
 	</table>
+	
+	
+	
 </body>
-
 
 </html>
